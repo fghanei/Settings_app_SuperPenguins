@@ -3023,6 +3023,15 @@
     <!-- Displayed when user launches a widget configuration activity that was uninstalled -->
     <string name="activity_not_found">Application is not installed on your phone.</string>
 
+    <!-- Super Penguins --> <skip />
+    <!-- WakeLocks Settings --> <skip />
+    <string name="wakelocks_settings">Wakelock Manager</string>
+    <!-- WakeLocks Settings Summary--> <skip />
+    <string name="wakelocks_settings_summary">Wakelock Manager Summary</string>
+
+
+
+
     <!-- Applications Settings --> <skip />
     <!-- Applications settings screen, setting option name for the user to go to the screen to manage installed applications  -->
     <string name="manageapplications_settings_title">Manage apps</string>

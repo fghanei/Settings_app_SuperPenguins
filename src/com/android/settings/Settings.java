@@ -118,4 +118,7 @@ public class Settings extends SettingsActivity {
     public static class WriteSettingsActivity extends SettingsActivity { /* empty */ }
     public static class AppDrawOverlaySettingsActivity extends SettingsActivity { /* empty */ }
     public static class AppWriteSettingsActivity extends SettingsActivity { /* empty */ }
+
+    /* Super Penguins */
+    public static class WakeLocksActivity extends SettingsActivity { /* empty */ }
 }

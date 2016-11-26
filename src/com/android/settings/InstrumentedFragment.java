@@ -26,6 +26,9 @@ public abstract class InstrumentedFragment extends PreferenceFragment {
     // Declare new temporary categories here, starting after this value.
     public static final int UNDECLARED = 100000;
 
+    /* Super Penguins */
+    public static final int WAKELOCKS = 100001;
+
     /**
      * Declare the view of this category.
      *

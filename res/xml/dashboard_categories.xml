@@ -256,6 +256,14 @@
                 android:icon="@drawable/ic_settings_about"
                 />
 
+        <!-- Super Penguins -->
+        <dashboard-tile
+                android:id="@+id/wakelocks_settings"
+                android:title="@string/wakelocks_settings"
+                android:fragment="com.android.settings.WakeLocksSettings"
+                android:icon="@drawable/ic_settings_wakelocks"
+                />
+
     </dashboard-category>
 
 </dashboard-categories>
