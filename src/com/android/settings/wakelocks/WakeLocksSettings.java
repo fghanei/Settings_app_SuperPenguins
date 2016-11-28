@@ -27,14 +27,19 @@ import com.android.settings.users.UserDialogs;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.app.ActivityManager;
+import android.content.pm.PackageManager;
+import android.content.Context;
+import android.os.UserHandle;
+import com.android.settingslib.applications.ApplicationsState;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class WakeLocksSettings extends SettingsPreferenceFragment {
-    private ListView mainListView;
-    private ArrayAdapter<String> listAdapter;
+    private String packageName = "com.kodarkooperativet.blackplayerfree";
+    private boolean started = false;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -50,8 +55,8 @@ public class WakeLocksSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-	addPreferencesFromResource(R.xml.wakelocks_settings);
-
+        started = false;
+        
 /*
         setContentView(R.layout.wakelocks_activity_main);
 
@@ -136,8 +141,30 @@ public class WakeLocksSettings extends SettingsPreferenceFragment {
     }
 */
     @Override
+    public void onResume() {
+        super.onResume();
+
+/*
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+*/
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
+
+        if (!started) {
+            started = true;
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.mpkostek.superpenguins");
+            if (launchIntent != null) { 
+                startActivity(launchIntent);//null pointer check in case package name was not found
+            }
+        } else
+            started = false;
+
 /*
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
