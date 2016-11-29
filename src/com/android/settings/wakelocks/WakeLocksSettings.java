@@ -33,25 +33,31 @@ public class WakeLocksSettings extends SettingsPreferenceFragment {
         super.onResume();
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.mpkostek.superpenguins");
         if (launchIntent != null) { 
+            Log.i("SP Settings", "starting SuperPenguins");
             startActivity(launchIntent);//null pointer check in case package name was not found
+        } else {
+            Log.i("SP Settings", "Apparantly SuperPenguins does not exist");
         }
-            finish();
-            getActivity().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
-            getActivity().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
+        finish();
+        getActivity().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
+        getActivity().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        Log.i("SP Settings", "onPause");
     }
 
     @Override
     public void onStop() {
         super.onStop();
+        Log.i("SP Settings", "onStop");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.i("SP Settings", "onDestroy");
     }
 }
